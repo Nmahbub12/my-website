@@ -555,6 +555,273 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
 .items-center { align-items: center; }
 .justify-between { justify-content: space-between; }
 .w-full { width: 100%; }
+
+/* BENCHMARKS TAB */
+.bm-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.bm-tier-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.bm-tier-head {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--tier-color, var(--border2));
+}
+.bm-tier-price {
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px;
+  color: var(--tier-color, var(--text));
+  margin-bottom: 2px;
+}
+.bm-tier-mkt {
+  font-size: 10px;
+  color: var(--faint);
+  letter-spacing: 0.06em;
+}
+.bm-tier-body { padding: 10px 16px 14px; }
+.bm-tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+.bm-tr:last-child { border-bottom: none; }
+.bm-tr-l { color: var(--muted); }
+.bm-tr-v { font-weight: 600; color: var(--text); }
+.bm-tr-v.good { color: var(--green); }
+.bm-tier-note {
+  padding: 8px 16px 12px;
+  font-size: 10px;
+  color: var(--faint);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+}
+
+/* Metric targets table */
+.bm-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.bm-table th {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface2);
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.bm-table td {
+  padding: 10px 14px;
+  font-size: 11px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.bm-table tr:last-child td { border-bottom: none; }
+.bm-table tr:hover td { background: var(--surface2); }
+.bm-table td:first-child { font-weight: 600; font-size: 12px; color: var(--text); }
+.bm-pill {
+  display: inline-block;
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.bm-pill.g { background: var(--green-dim); color: var(--green); }
+.bm-pill.a { background: var(--amber-dim); color: var(--amber); }
+.bm-pill.r { background: var(--red-dim); color: var(--red); }
+
+/* Screener */
+.bm-screener {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media(max-width:700px) { .bm-screener { grid-template-columns: 1fr; } }
+.bm-score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.bm-score-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+.bm-score-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 4px;
+}
+.bm-score-val {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  color: var(--text);
+  line-height: 1;
+}
+.bm-score-val.pos { color: var(--green); }
+.bm-score-val.neg { color: var(--red); }
+.bm-score-val.neu { color: var(--amber); }
+.bm-score-sub { font-size: 10px; color: var(--faint); margin-top: 3px; }
+.bm-verdict {
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.bm-verdict.pass { background: var(--green-dim); border: 1px solid var(--green-mid); color: var(--green); }
+.bm-verdict.warn { background: var(--amber-dim); border: 1px solid rgba(154,104,0,0.2); color: var(--amber); }
+.bm-verdict.fail { background: var(--red-dim); border: 1px solid rgba(184,50,50,0.18); color: var(--red); }
+.bm-verdict strong { font-weight: 700; }
+.bm-checklist { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+.bm-checklist li { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+.bm-check-icon { width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; font-weight: 700; }
+.bm-check-icon.p { background: var(--green-dim); color: var(--green); }
+.bm-check-icon.f { background: var(--red-dim); color: var(--red); }
+.bm-check-icon.w { background: var(--amber-dim); color: var(--amber); }
+.bm-insight {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.bm-insight strong { color: var(--text); }
+
+/* ── INLINE BENCHMARK PANEL (Analyze tab) ── */
+.bm-panel {
+  margin-top: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.bm-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+.bm-panel-title {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.bm-panel-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+}
+.bm-panel-badge.pass { background: var(--green-dim); color: var(--green); }
+.bm-panel-badge.warn { background: var(--amber-dim); color: var(--amber); }
+.bm-panel-badge.fail { background: var(--red-dim);   color: var(--red);   }
+.bm-panel-tier {
+  font-size: 10px;
+  color: var(--faint);
+  padding: 6px 18px 8px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+.bm-panel-tier span { font-weight: 600; color: var(--muted); }
+.bm-check-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.bm-check-row:last-child { border-bottom: none; }
+.bm-check-row:hover { background: var(--surface2); }
+.bm-check-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.bm-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.bm-check-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
+.bm-check-actual { font-weight: 600; color: var(--text); }
+.bm-check-target { color: var(--faint); font-size: 10px; }
+.bm-check-status {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 99px;
+  min-width: 38px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.bm-check-status.p { background: var(--green-dim); color: var(--green); }
+.bm-check-status.w { background: var(--amber-dim); color: var(--amber); }
+.bm-check-status.f { background: var(--red-dim);   color: var(--red);   }
+.bm-panel-verdict {
+  padding: 12px 18px;
+  font-size: 11px;
+  line-height: 1.65;
+  border-top: 1px solid var(--border);
+}
+.bm-panel-verdict.pass { background: var(--green-dim); color: var(--green); }
+.bm-panel-verdict.warn { background: var(--amber-dim); color: var(--amber); }
+.bm-panel-verdict.fail { background: var(--red-dim);   color: var(--red);   }
+.bm-panel-verdict strong { font-weight: 700; }
+.bm-score-bar {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 18px 12px;
+  border-top: 1px solid var(--border);
+}
+.bm-score-seg {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  transition: background 0.25s;
+}
 </style>
 </head>
 <body>
@@ -565,19 +832,20 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
     <div class="nav-tab active" onclick="switchTab('analyze')">Analyze</div>
     <div class="nav-tab" onclick="switchTab('brrrr')">BRRRR</div>
     <div class="nav-tab" onclick="switchTab('compare')">Compare</div>
+    <div class="nav-tab" onclick="switchTab('benchmarks')">Benchmarks</div>
     <div class="nav-tab" onclick="switchTab('glossary')">Glossary</div>
   </div>
 </nav>
 
 <div class="main">
 
-<!-- âââââââââââââââââââ TAB: ANALYZE âââââââââââââââââââ -->
+<!-- ═══════════════════ TAB: ANALYZE ═══════════════════ -->
 <div class="tab-panel active" id="tab-analyze">
 
   <div class="page-header">
     <div class="page-eyebrow">Deal Analyzer</div>
     <div class="page-title">Underwrite any <em>deal</em></div>
-    <div class="page-sub">SFR or multi-family Â· All expenses broken out Â· Numbers update live</div>
+    <div class="page-sub">SFR or multi-family · All expenses broken out · Numbers update live</div>
   </div>
 
   <!-- Property type toggle -->
@@ -699,34 +967,34 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
       <div id="result-highlight-a" class="result-highlight">
         <div>
           <div class="rh-label">Monthly cash flow</div>
-          <div class="rh-val" id="rh-cf">â</div>
+          <div class="rh-val" id="rh-cf">—</div>
         </div>
-        <div class="rh-note" id="rh-note">â</div>
+        <div class="rh-note" id="rh-note">—</div>
       </div>
 
       <div class="grid-2">
         <div class="metric-card" id="mc-noi">
-          <div class="metric-name">NOI â Annual</div>
-          <div class="metric-val" id="mv-noi">â</div>
-          <div class="metric-desc">Income â opex, before debt service</div>
+          <div class="metric-name">NOI — Annual</div>
+          <div class="metric-val" id="mv-noi">—</div>
+          <div class="metric-desc">Income − opex, before debt service</div>
           <div id="mp-noi"></div>
         </div>
         <div class="metric-card" id="mc-coc">
           <div class="metric-name">Cash-on-Cash Return</div>
-          <div class="metric-val" id="mv-coc">â</div>
-          <div class="metric-desc">Annual CF Ã· total cash invested</div>
+          <div class="metric-val" id="mv-coc">—</div>
+          <div class="metric-desc">Annual CF ÷ total cash invested</div>
           <div id="mp-coc"></div>
         </div>
         <div class="metric-card" id="mc-cap">
           <div class="metric-name">Cap Rate</div>
-          <div class="metric-val" id="mv-cap">â</div>
-          <div class="metric-desc">NOI Ã· purchase price</div>
+          <div class="metric-val" id="mv-cap">—</div>
+          <div class="metric-desc">NOI ÷ purchase price</div>
           <div id="mp-cap"></div>
         </div>
         <div class="metric-card" id="mc-grm">
           <div class="metric-name">Gross Rent Multiplier</div>
-          <div class="metric-val" id="mv-grm">â</div>
-          <div class="metric-desc">Price Ã· gross annual rent</div>
+          <div class="metric-val" id="mv-grm">—</div>
+          <div class="metric-desc">Price ÷ gross annual rent</div>
           <div id="mp-grm"></div>
         </div>
       </div>
@@ -735,15 +1003,15 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
         <div class="metric-name" style="margin-bottom:6px">Calculated Mortgage Payment</div>
         <div class="flex justify-between items-center">
           <span style="color:var(--muted);font-size:11px">Monthly P&I</span>
-          <span class="metric-val" style="font-size:22px" id="mv-mort">â</span>
+          <span class="metric-val" style="font-size:22px" id="mv-mort">—</span>
         </div>
         <div class="flex justify-between items-center mt4">
           <span style="color:var(--muted);font-size:11px">Loan amount</span>
-          <span style="font-size:12px;color:var(--text)" id="mv-loan">â</span>
+          <span style="font-size:12px;color:var(--text)" id="mv-loan">—</span>
         </div>
         <div class="flex justify-between items-center mt4">
           <span style="color:var(--muted);font-size:11px">Total cash to close</span>
-          <span style="font-size:12px;color:var(--text)" id="mv-cash">â</span>
+          <span style="font-size:12px;color:var(--text)" id="mv-cash">—</span>
         </div>
       </div>
 
@@ -751,36 +1019,49 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
       <div class="slabel">Annual breakdown</div>
       <div class="breakdown">
         <div class="brow section-head"><span>Income</span></div>
-        <div class="brow"><span class="bl">Gross rental income</span><span class="bv pos" id="b-gross">â</span></div>
-        <div class="brow"><span class="bl">â Vacancy loss</span><span class="bv neg" id="b-vac">â</span></div>
-        <div class="brow total"><span class="bl" style="color:var(--text)">= Effective gross income</span><span class="bv pos" id="b-egi">â</span></div>
+        <div class="brow"><span class="bl">Gross rental income</span><span class="bv pos" id="b-gross">—</span></div>
+        <div class="brow"><span class="bl">− Vacancy loss</span><span class="bv neg" id="b-vac">—</span></div>
+        <div class="brow total"><span class="bl" style="color:var(--text)">= Effective gross income</span><span class="bv pos" id="b-egi">—</span></div>
 
         <div class="brow section-head"><span>Operating Expenses</span></div>
-        <div class="brow"><span class="bl">Property taxes</span><span class="bv neg" id="b-tax">â</span></div>
-        <div class="brow"><span class="bl">Insurance</span><span class="bv neg" id="b-ins">â</span></div>
-        <div class="brow"><span class="bl">Property management</span><span class="bv neg" id="b-pm">â</span></div>
-        <div class="brow"><span class="bl">Maintenance</span><span class="bv neg" id="b-maint">â</span></div>
-        <div class="brow"><span class="bl">CapEx reserve</span><span class="bv neg" id="b-capex">â</span></div>
-        <div class="brow"><span class="bl">HOA</span><span class="bv neg" id="b-hoa">â</span></div>
-        <div class="brow"><span class="bl">Utilities</span><span class="bv neg" id="b-util">â</span></div>
-        <div class="brow total"><span style="color:var(--text)">= NOI</span><span class="bv" id="b-noi">â</span></div>
+        <div class="brow"><span class="bl">Property taxes</span><span class="bv neg" id="b-tax">—</span></div>
+        <div class="brow"><span class="bl">Insurance</span><span class="bv neg" id="b-ins">—</span></div>
+        <div class="brow"><span class="bl">Property management</span><span class="bv neg" id="b-pm">—</span></div>
+        <div class="brow"><span class="bl">Maintenance</span><span class="bv neg" id="b-maint">—</span></div>
+        <div class="brow"><span class="bl">CapEx reserve</span><span class="bv neg" id="b-capex">—</span></div>
+        <div class="brow"><span class="bl">HOA</span><span class="bv neg" id="b-hoa">—</span></div>
+        <div class="brow"><span class="bl">Utilities</span><span class="bv neg" id="b-util">—</span></div>
+        <div class="brow total"><span style="color:var(--text)">= NOI</span><span class="bv" id="b-noi">—</span></div>
 
         <div class="brow section-head"><span>Debt Service</span></div>
-        <div class="brow"><span class="bl">â Mortgage (P&I)</span><span class="bv neg" id="b-mort">â</span></div>
-        <div class="brow total" style="background:var(--surface3)"><span style="color:var(--text);font-weight:700">= Net Cash Flow (yr)</span><span class="bv" id="b-cfyr">â</span></div>
+        <div class="brow"><span class="bl">− Mortgage (P&I)</span><span class="bv neg" id="b-mort">—</span></div>
+        <div class="brow total" style="background:var(--surface3)"><span style="color:var(--text);font-weight:700">= Net Cash Flow (yr)</span><span class="bv" id="b-cfyr">—</span></div>
+      </div>
+
+      <!-- ── BENCHMARK SCORECARD ── -->
+      <div class="slabel">Benchmark scorecard</div>
+      <div class="bm-panel" id="bm-panel">
+        <div class="bm-panel-header">
+          <div class="bm-panel-title">vs. benchmark targets</div>
+          <div class="bm-panel-badge" id="bm-badge">—</div>
+        </div>
+        <div class="bm-panel-tier" id="bm-tier-label">Detecting tier…</div>
+        <div id="bm-checks"></div>
+        <div class="bm-score-bar" id="bm-score-bar"></div>
+        <div class="bm-panel-verdict" id="bm-panel-verdict">—</div>
       </div>
 
     </div>
   </div>
 </div>
 
-<!-- âââââââââââââââââââ TAB: BRRRR âââââââââââââââââââ -->
+<!-- ═══════════════════ TAB: BRRRR ═══════════════════ -->
 <div class="tab-panel" id="tab-brrrr">
 
   <div class="page-header">
     <div class="page-eyebrow">BRRRR Analyzer</div>
     <div class="page-title">Model your <em>refinance</em></div>
-    <div class="page-sub">Buy Â· Rehab Â· Rent Â· Refinance Â· Repeat â see how much capital you pull back out</div>
+    <div class="page-sub">Buy · Rehab · Rent · Refinance · Repeat — see how much capital you pull back out</div>
   </div>
 
   <!-- BRRRR phase labels -->
@@ -788,31 +1069,31 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
     <div class="brrrr-step">
       <div class="brrrr-letter">B</div>
       <div class="brrrr-word">Buy</div>
-      <div class="brrrr-stat" id="br-buy">â</div>
+      <div class="brrrr-stat" id="br-buy">—</div>
       <div class="brrrr-sub">purchase price</div>
     </div>
     <div class="brrrr-step">
       <div class="brrrr-letter">R</div>
       <div class="brrrr-word">Rehab</div>
-      <div class="brrrr-stat" id="br-rehab">â</div>
+      <div class="brrrr-stat" id="br-rehab">—</div>
       <div class="brrrr-sub">rehab budget</div>
     </div>
     <div class="brrrr-step">
       <div class="brrrr-letter">R</div>
       <div class="brrrr-word">Rent</div>
-      <div class="brrrr-stat" id="br-rent">â</div>
+      <div class="brrrr-stat" id="br-rent">—</div>
       <div class="brrrr-sub">monthly rent</div>
     </div>
     <div class="brrrr-step">
       <div class="brrrr-letter">R</div>
       <div class="brrrr-word">Refinance</div>
-      <div class="brrrr-stat" id="br-refi">â</div>
+      <div class="brrrr-stat" id="br-refi">—</div>
       <div class="brrrr-sub">new loan amount</div>
     </div>
     <div class="brrrr-step">
       <div class="brrrr-letter">R</div>
       <div class="brrrr-word">Repeat</div>
-      <div class="brrrr-stat pos" id="br-equity">â</div>
+      <div class="brrrr-stat pos" id="br-equity">—</div>
       <div class="brrrr-sub">equity captured</div>
     </div>
   </div>
@@ -896,30 +1177,30 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
       <div id="brrrr-highlight" class="result-highlight">
         <div>
           <div class="rh-label">Capital recovered</div>
-          <div class="rh-val" id="br-recovered">â</div>
+          <div class="rh-val" id="br-recovered">—</div>
         </div>
-        <div class="rh-note" id="br-note">â</div>
+        <div class="rh-note" id="br-note">—</div>
       </div>
 
       <div class="grid-2">
         <div class="metric-card" id="br-mc1">
           <div class="metric-name">Total cash invested</div>
-          <div class="metric-val" id="br-mv1">â</div>
+          <div class="metric-val" id="br-mv1">—</div>
           <div class="metric-desc">Down + rehab + holding + closing</div>
         </div>
         <div class="metric-card" id="br-mc2">
           <div class="metric-name">Cash left in deal</div>
-          <div class="metric-val" id="br-mv2">â</div>
+          <div class="metric-val" id="br-mv2">—</div>
           <div class="metric-desc">After refi proceeds returned</div>
         </div>
         <div class="metric-card" id="br-mc3">
           <div class="metric-name">Forced equity created</div>
-          <div class="metric-val" id="br-mv3">â</div>
-          <div class="metric-desc">ARV â all-in cost</div>
+          <div class="metric-val" id="br-mv3">—</div>
+          <div class="metric-desc">ARV − all-in cost</div>
         </div>
         <div class="metric-card" id="br-mc4">
           <div class="metric-name">Post-refi cash flow</div>
-          <div class="metric-val" id="br-mv4">â</div>
+          <div class="metric-val" id="br-mv4">—</div>
           <div class="metric-desc">Monthly, after new mortgage</div>
         </div>
       </div>
@@ -927,50 +1208,50 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
       <div class="slabel">BRRRR cost breakdown</div>
       <div class="breakdown">
         <div class="brow section-head"><span>Cash In</span></div>
-        <div class="brow"><span class="bl">Purchase price</span><span class="bv" id="brb-price">â</span></div>
-        <div class="brow"><span class="bl">Rehab budget</span><span class="bv neg" id="brb-rehab">â</span></div>
-        <div class="brow"><span class="bl">Holding costs (total)</span><span class="bv neg" id="brb-hold">â</span></div>
-        <div class="brow"><span class="bl">Closing costs (buy)</span><span class="bv neg" id="brb-close1">â</span></div>
-        <div class="brow total"><span style="color:var(--text)">= All-in cost</span><span class="bv neg" id="brb-allin">â</span></div>
+        <div class="brow"><span class="bl">Purchase price</span><span class="bv" id="brb-price">—</span></div>
+        <div class="brow"><span class="bl">Rehab budget</span><span class="bv neg" id="brb-rehab">—</span></div>
+        <div class="brow"><span class="bl">Holding costs (total)</span><span class="bv neg" id="brb-hold">—</span></div>
+        <div class="brow"><span class="bl">Closing costs (buy)</span><span class="bv neg" id="brb-close1">—</span></div>
+        <div class="brow total"><span style="color:var(--text)">= All-in cost</span><span class="bv neg" id="brb-allin">—</span></div>
 
         <div class="brow section-head"><span>Refinance</span></div>
-        <div class="brow"><span class="bl">ARV</span><span class="bv pos" id="brb-arv">â</span></div>
-        <div class="brow"><span class="bl">Refi loan (<span id="brb-ltv-pct">75</span>% LTV)</span><span class="bv pos" id="brb-loan">â</span></div>
-        <div class="brow"><span class="bl">â Refi closing costs</span><span class="bv neg" id="brb-close2">â</span></div>
-        <div class="brow total"><span style="color:var(--text)">= Net refi proceeds</span><span class="bv pos" id="brb-proceeds">â</span></div>
+        <div class="brow"><span class="bl">ARV</span><span class="bv pos" id="brb-arv">—</span></div>
+        <div class="brow"><span class="bl">Refi loan (<span id="brb-ltv-pct">75</span>% LTV)</span><span class="bv pos" id="brb-loan">—</span></div>
+        <div class="brow"><span class="bl">− Refi closing costs</span><span class="bv neg" id="brb-close2">—</span></div>
+        <div class="brow total"><span style="color:var(--text)">= Net refi proceeds</span><span class="bv pos" id="brb-proceeds">—</span></div>
 
         <div class="brow section-head"><span>Result</span></div>
-        <div class="brow"><span class="bl">Cash left in deal</span><span class="bv" id="brb-left">â</span></div>
-        <div class="brow"><span class="bl">Equity at ARV</span><span class="bv pos" id="brb-equity">â</span></div>
-        <div class="brow total" style="background:var(--surface3)"><span style="color:var(--text);font-weight:700">Post-refi monthly CF</span><span class="bv" id="brb-cf">â</span></div>
+        <div class="brow"><span class="bl">Cash left in deal</span><span class="bv" id="brb-left">—</span></div>
+        <div class="brow"><span class="bl">Equity at ARV</span><span class="bv pos" id="brb-equity">—</span></div>
+        <div class="brow total" style="background:var(--surface3)"><span style="color:var(--text);font-weight:700">Post-refi monthly CF</span><span class="bv" id="brb-cf">—</span></div>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- âââââââââââââââââââ TAB: COMPARE âââââââââââââââââââ -->
+<!-- ═══════════════════ TAB: COMPARE ═══════════════════ -->
 <div class="tab-panel" id="tab-compare">
 
   <div class="page-header">
     <div class="page-eyebrow">Deal Comparison</div>
     <div class="page-title">Compare up to <em>3 deals</em></div>
-    <div class="page-sub">Enter key figures for each deal â best and worst values are highlighted automatically</div>
+    <div class="page-sub">Enter key figures for each deal — best and worst values are highlighted automatically</div>
   </div>
 
   <!-- Deal headers -->
   <div class="grid-3" style="margin-bottom:0">
     <div class="deal-col-header" style="border-radius:12px 12px 0 0">
       <div class="deal-dot" style="background:#2d6a1f"></div>
-      <input class="compare-name-input" id="cn-1" type="text" placeholder="Deal A â e.g. Redford SFR" value="Deal A">
+      <input class="compare-name-input" id="cn-1" type="text" placeholder="Deal A — e.g. Redford SFR" value="Deal A">
     </div>
     <div class="deal-col-header" style="border-radius:12px 12px 0 0">
       <div class="deal-dot" style="background:#1a5c8a"></div>
-      <input class="compare-name-input" id="cn-2" type="text" placeholder="Deal B â e.g. Macon Duplex" value="Deal B">
+      <input class="compare-name-input" id="cn-2" type="text" placeholder="Deal B — e.g. Macon Duplex" value="Deal B">
     </div>
     <div class="deal-col-header" style="border-radius:12px 12px 0 0">
       <div class="deal-dot" style="background:#9a6800"></div>
-      <input class="compare-name-input" id="cn-3" type="text" placeholder="Deal C â e.g. Huntsville SFR" value="Deal C">
+      <input class="compare-name-input" id="cn-3" type="text" placeholder="Deal C — e.g. Huntsville SFR" value="Deal C">
     </div>
   </div>
 
@@ -1014,26 +1295,230 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
         </tr>
       </thead>
       <tbody>
-        <tr><td>Monthly cash flow</td><td id="ct-cf-1">â</td><td id="ct-cf-2">â</td><td id="ct-cf-3">â</td></tr>
-        <tr><td>Annual cash flow</td><td id="ct-cfy-1">â</td><td id="ct-cfy-2">â</td><td id="ct-cfy-3">â</td></tr>
-        <tr><td>Cash-on-cash return</td><td id="ct-coc-1">â</td><td id="ct-coc-2">â</td><td id="ct-coc-3">â</td></tr>
-        <tr><td>Cap rate</td><td id="ct-cap-1">â</td><td id="ct-cap-2">â</td><td id="ct-cap-3">â</td></tr>
-        <tr><td>GRM</td><td id="ct-grm-1">â</td><td id="ct-grm-2">â</td><td id="ct-grm-3">â</td></tr>
-        <tr><td>NOI (annual)</td><td id="ct-noi-1">â</td><td id="ct-noi-2">â</td><td id="ct-noi-3">â</td></tr>
-        <tr><td>Mortgage/mo</td><td id="ct-mort-1">â</td><td id="ct-mort-2">â</td><td id="ct-mort-3">â</td></tr>
-        <tr><td>Total cash to close</td><td id="ct-cash-1">â</td><td id="ct-cash-2">â</td><td id="ct-cash-3">â</td></tr>
+        <tr><td>Monthly cash flow</td><td id="ct-cf-1">—</td><td id="ct-cf-2">—</td><td id="ct-cf-3">—</td></tr>
+        <tr><td>Annual cash flow</td><td id="ct-cfy-1">—</td><td id="ct-cfy-2">—</td><td id="ct-cfy-3">—</td></tr>
+        <tr><td>Cash-on-cash return</td><td id="ct-coc-1">—</td><td id="ct-coc-2">—</td><td id="ct-coc-3">—</td></tr>
+        <tr><td>Cap rate</td><td id="ct-cap-1">—</td><td id="ct-cap-2">—</td><td id="ct-cap-3">—</td></tr>
+        <tr><td>GRM</td><td id="ct-grm-1">—</td><td id="ct-grm-2">—</td><td id="ct-grm-3">—</td></tr>
+        <tr><td>NOI (annual)</td><td id="ct-noi-1">—</td><td id="ct-noi-2">—</td><td id="ct-noi-3">—</td></tr>
+        <tr><td>Mortgage/mo</td><td id="ct-mort-1">—</td><td id="ct-mort-2">—</td><td id="ct-mort-3">—</td></tr>
+        <tr><td>Total cash to close</td><td id="ct-cash-1">—</td><td id="ct-cash-2">—</td><td id="ct-cash-3">—</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="card mt12" style="padding:16px 20px" id="compare-winner">
     <div style="font-size:11px;color:var(--muted)">Best overall deal by cash-on-cash return</div>
-    <div style="font-size:18px;font-family:'Instrument Serif',serif;margin-top:4px" id="compare-winner-text">â</div>
+    <div style="font-size:18px;font-family:'Instrument Serif',serif;margin-top:4px" id="compare-winner-text">—</div>
   </div>
 
 </div>
 
-<!-- âââââââââââââââââââ TAB: GLOSSARY âââââââââââââââââââ -->
+<!-- ═══════════════════ TAB: BENCHMARKS ═══════════════════ -->
+<div class="tab-panel" id="tab-benchmarks">
+
+  <div class="page-header">
+    <div class="page-eyebrow">Market Standards</div>
+    <div class="page-title">Deal <em>benchmarks</em></div>
+    <div class="page-sub">Healthy NOI, cap rate, and cash flow targets by price tier — plus a live deal screener</div>
+  </div>
+
+  <div class="bm-insight">
+    <strong>The core principle:</strong> NOI alone tells you nothing. A $400/mo NOI on a $80K property is excellent (6% cap rate). The same $400/mo on a $300K property is a disaster (1.6% cap rate). Always evaluate NOI relative to purchase price via cap rate, and check that the spread above your debt service generates real cash flow. The targets below are calibrated for Midwest/Southeast SFH markets — your primary acquisition zone.
+  </div>
+
+  <!-- TIER CARDS -->
+  <div class="slabel">NOI targets by price tier</div>
+  <div class="bm-tier-grid">
+
+    <div class="bm-tier-card" style="--tier-color:#2d6a1f">
+      <div class="bm-tier-head">
+        <div class="bm-tier-price">$80K – $150K</div>
+        <div class="bm-tier-mkt">Midwest C-class / rural</div>
+      </div>
+      <div class="bm-tier-body">
+        <div class="bm-tr"><span class="bm-tr-l">Min NOI / mo</span><span class="bm-tr-v">$450</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good NOI / mo</span><span class="bm-tr-v good">$650+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cap rate</span><span class="bm-tr-v">6.5%</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good cap rate</span><span class="bm-tr-v good">8.5%+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">1% rule</span><span class="bm-tr-v good">Achievable — use it</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cash flow</span><span class="bm-tr-v">$150/mo</span></div>
+      </div>
+      <div class="bm-tier-note">Best cash flow per dollar invested. Higher tenant turnover and management intensity. Good BRRRR tier.</div>
+    </div>
+
+    <div class="bm-tier-card" style="--tier-color:#1a5c8a">
+      <div class="bm-tier-head">
+        <div class="bm-tier-price">$150K – $250K</div>
+        <div class="bm-tier-mkt">Midwest / SE B-class SFH — your target</div>
+      </div>
+      <div class="bm-tier-body">
+        <div class="bm-tr"><span class="bm-tr-l">Min NOI / mo</span><span class="bm-tr-v">$550</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good NOI / mo</span><span class="bm-tr-v good">$800+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cap rate</span><span class="bm-tr-v">6.0%</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good cap rate</span><span class="bm-tr-v good">7.5%+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">1% rule</span><span class="bm-tr-v good">Achievable in Macon / Huntsville</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cash flow</span><span class="bm-tr-v">$200/mo</span></div>
+      </div>
+      <div class="bm-tier-note">Primary acquisition zone. Balance of cash flow and tenant quality. Most scalable with conventional financing.</div>
+    </div>
+
+    <div class="bm-tier-card" style="--tier-color:#9a6800">
+      <div class="bm-tier-head">
+        <div class="bm-tier-price">$250K – $400K</div>
+        <div class="bm-tier-mkt">SE growth market / Atlanta suburbs</div>
+      </div>
+      <div class="bm-tier-body">
+        <div class="bm-tr"><span class="bm-tr-l">Min NOI / mo</span><span class="bm-tr-v">$700</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good NOI / mo</span><span class="bm-tr-v good">$1,100+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cap rate</span><span class="bm-tr-v">5.0%</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good cap rate</span><span class="bm-tr-v good">6.5%+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">1% rule</span><span class="bm-tr-v" style="color:var(--amber)">Rarely achievable</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cash flow</span><span class="bm-tr-v">$200/mo</span></div>
+      </div>
+      <div class="bm-tier-note">House hack / first deal tier. Appreciation supplements cash flow. Needs larger down payment or FHA to pencil.</div>
+    </div>
+
+    <div class="bm-tier-card" style="--tier-color:#7c7a72">
+      <div class="bm-tier-head">
+        <div class="bm-tier-price">$400K+ (reference)</div>
+        <div class="bm-tier-mkt">Primary metro / coastal</div>
+      </div>
+      <div class="bm-tier-body">
+        <div class="bm-tr"><span class="bm-tr-l">Min NOI / mo</span><span class="bm-tr-v">$900</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good NOI / mo</span><span class="bm-tr-v good">$1,500+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cap rate</span><span class="bm-tr-v">3.5%</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Good cap rate</span><span class="bm-tr-v good">5.0%+</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">1% rule</span><span class="bm-tr-v" style="color:var(--red)">Not applicable</span></div>
+        <div class="bm-tr"><span class="bm-tr-l">Min cash flow</span><span class="bm-tr-v">$0+ (appreciation play)</span></div>
+      </div>
+      <div class="bm-tier-note">Rarely cash flows at today's rates without 30%+ down. Appreciation-driven. Not aligned with your strategy.</div>
+    </div>
+
+  </div>
+
+  <!-- METRIC TARGETS TABLE -->
+  <div class="slabel">Metric targets — what each number should look like</div>
+  <div style="overflow-x:auto;margin-bottom:8px;">
+    <table class="bm-table">
+      <thead>
+        <tr>
+          <th style="min-width:140px">Metric</th>
+          <th>Formula</th>
+          <th>Pass</th>
+          <th>Watch</th>
+          <th>Reject</th>
+          <th style="min-width:200px">Why it matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cap rate</td>
+          <td style="color:var(--faint);">NOI ÷ price × 100</td>
+          <td><span class="bm-pill g">≥ 7%</span></td>
+          <td><span class="bm-pill a">5–7%</span></td>
+          <td><span class="bm-pill r">&lt; 5%</span></td>
+          <td style="color:var(--muted)">Primary market filter. Midwest/SE targets should clear 7%. Atlanta house hack at 5–6% acceptable — appreciation supplements.</td>
+        </tr>
+        <tr>
+          <td>Cash-on-cash</td>
+          <td style="color:var(--faint);">Annual CF ÷ cash invested</td>
+          <td><span class="bm-pill g">≥ 8%</span></td>
+          <td><span class="bm-pill a">5–8%</span></td>
+          <td><span class="bm-pill r">&lt; 5%</span></td>
+          <td style="color:var(--muted)">How hard YOUR money works. Below 5% and an index fund beats you with zero management. This is your #1 filter.</td>
+        </tr>
+        <tr>
+          <td>Monthly cash flow</td>
+          <td style="color:var(--faint);">NOI − mortgage / mo</td>
+          <td><span class="bm-pill g">≥ $200/door</span></td>
+          <td><span class="bm-pill a">$100–200</span></td>
+          <td><span class="bm-pill r">&lt; $100</span></td>
+          <td style="color:var(--muted)">Survivability buffer. Below $100/mo and one 30-day vacancy wipes an entire year of gains.</td>
+        </tr>
+        <tr>
+          <td>Gross Rent Multiplier</td>
+          <td style="color:var(--faint);">Price ÷ gross annual rent</td>
+          <td><span class="bm-pill g">&lt; 10</span></td>
+          <td><span class="bm-pill a">10–13</span></td>
+          <td><span class="bm-pill r">&gt; 15</span></td>
+          <td style="color:var(--muted)">Quick 10-second screen. If GRM fails, don't spend another hour underwriting. $190K at $1,500/mo = GRM 10.6.</td>
+        </tr>
+        <tr>
+          <td>1% Rule</td>
+          <td style="color:var(--faint);">Rent ÷ price ≥ 1%</td>
+          <td><span class="bm-pill g">≥ 1.0%</span></td>
+          <td><span class="bm-pill a">0.8–1.0%</span></td>
+          <td><span class="bm-pill r">&lt; 0.7%</span></td>
+          <td style="color:var(--muted)">Blunt first filter only — not a deal-maker. $180K property needs $1,800/mo to pass. Fails? Move on fast.</td>
+        </tr>
+        <tr>
+          <td>Expense ratio</td>
+          <td style="color:var(--faint);">Total opex ÷ gross rent</td>
+          <td><span class="bm-pill g">&lt; 45%</span></td>
+          <td><span class="bm-pill a">45–55%</span></td>
+          <td><span class="bm-pill r">&gt; 60%</span></td>
+          <td style="color:var(--muted)">For SFH rentals, 40–50% all-in is realistic. Above 55% means the deal is overpriced or rents are too low.</td>
+        </tr>
+        <tr>
+          <td>DSCR</td>
+          <td style="color:var(--faint);">Annual NOI ÷ annual mortgage</td>
+          <td><span class="bm-pill g">≥ 1.25</span></td>
+          <td><span class="bm-pill a">1.0–1.25</span></td>
+          <td><span class="bm-pill r">&lt; 1.0</span></td>
+          <td style="color:var(--muted)">DSCR &lt; 1.0 means NOI doesn't cover the mortgage — you're subsidizing from W-2 income. Lenders require 1.2+ for DSCR loans.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LIVE DEAL SCREENER -->
+  <div class="slabel">Live deal screener</div>
+  <div class="bm-screener">
+
+    <!-- LEFT: Inputs -->
+    <div>
+      <div class="input-card">
+        <div class="input-card-title">Property inputs</div>
+        <div class="field">
+          <div class="field-label">Purchase price <span class="field-val" id="bm-r-price">$190,000</span></div>
+          <div class="field-row"><input type="range" id="bm-s-price" min="50000" max="600000" step="5000" value="190000" oninput="calcBenchmark()"><input type="number" class="field-num" id="bm-n-price" min="50000" max="600000" step="5000" value="190000" oninput="syncFromNum('bm-n-price','bm-s-price');calcBenchmark()"></div>
+        </div>
+        <div class="field">
+          <div class="field-label">Monthly gross rent <span class="field-val" id="bm-r-rent">$1,400</span></div>
+          <div class="field-row"><input type="range" id="bm-s-rent" min="300" max="5000" step="50" value="1400" oninput="calcBenchmark()"><input type="number" class="field-num" id="bm-n-rent" min="300" max="5000" step="50" value="1400" oninput="syncFromNum('bm-n-rent','bm-s-rent');calcBenchmark()"></div>
+        </div>
+        <div class="field">
+          <div class="field-label">Down payment <span class="field-val" id="bm-r-down">$9,500</span></div>
+          <div class="field-row"><input type="range" id="bm-s-down" min="3000" max="200000" step="1000" value="9500" oninput="calcBenchmark()"><input type="number" class="field-num" id="bm-n-down" min="3000" max="200000" step="1000" value="9500" oninput="syncFromNum('bm-n-down','bm-s-down');calcBenchmark()"></div>
+        </div>
+        <div class="field">
+          <div class="field-label">Interest rate <span class="field-val" id="bm-r-rate">7.25%</span></div>
+          <div class="field-row"><input type="range" id="bm-s-rate" min="4" max="12" step="0.125" value="7.25" oninput="calcBenchmark()"><input type="number" class="field-num" id="bm-n-rate" min="4" max="12" step="0.125" value="7.25" oninput="syncFromNum('bm-n-rate','bm-s-rate');calcBenchmark()"></div>
+        </div>
+        <div class="field">
+          <div class="field-label">Vacancy rate <span class="field-val" id="bm-r-vac">8%</span></div>
+          <div class="field-row"><input type="range" id="bm-s-vac" min="0" max="20" step="1" value="8" oninput="calcBenchmark()"><input type="number" class="field-num" id="bm-n-vac" min="0" max="20" step="1" value="8" oninput="syncFromNum('bm-n-vac','bm-s-vac');calcBenchmark()"></div>
+        </div>
+        <div class="field">
+          <div class="field-label">Total opex / mo <span class="field-val" id="bm-r-opex">$550</span></div>
+          <div class="field-row"><input type="range" id="bm-s-opex" min="100" max="2000" step="25" value="550" oninput="calcBenchmark()"><input type="number" class="field-num" id="bm-n-opex" min="100" max="2000" step="25" value="550" oninput="syncFromNum('bm-n-opex','bm-s-opex');calcBenchmark()"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div>
+      <div class="bm-score-grid" id="bm-scores"></div>
+      <div id="bm-checklist-wrap" style="margin-bottom:16px;"></div>
+      <div id="bm-verdict-wrap"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ═══════════════════ TAB: GLOSSARY ═══════════════════ -->
 <div class="tab-panel" id="tab-glossary">
   <div class="page-header">
     <div class="page-eyebrow">Reference</div>
@@ -1043,82 +1528,82 @@ input[type=number]:not(.field-num):focus, input[type=text]:focus {
 
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
-      <span class="gloss-title">NOI â Net Operating Income</span>
-      <span class="gloss-formula">EGI â operating expenses (excl. mortgage)</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-title">NOI — Net Operating Income</span>
+      <span class="gloss-formula">EGI − operating expenses (excl. mortgage)</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">Does the building make money before the loan? NOI strips out your financing entirely â useful for comparing a leveraged deal to an all-cash deal on the same terms. Banks use NOI to underwrite commercial loans. If your NOI is negative, no amount of low financing will fix the deal.</div>
+    <div class="gloss-body">Does the building make money before the loan? NOI strips out your financing entirely — useful for comparing a leveraged deal to an all-cash deal on the same terms. Banks use NOI to underwrite commercial loans. If your NOI is negative, no amount of low financing will fix the deal.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">Effective Gross Income (EGI)</span>
-      <span class="gloss-formula">Gross rent â vacancy loss</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-formula">Gross rent − vacancy loss</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">What you actually collect after accounting for the time the unit sits empty. A 8% vacancy rate on $1,500/month rent = $120/month you'll never see. Most investors model 8â10% vacancy even in strong markets as a conservative baseline.</div>
+    <div class="gloss-body">What you actually collect after accounting for the time the unit sits empty. A 8% vacancy rate on $1,500/month rent = $120/month you'll never see. Most investors model 8–10% vacancy even in strong markets as a conservative baseline.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">Cash Flow</span>
-      <span class="gloss-formula">NOI â annual debt service (mortgage P&I)</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-formula">NOI − annual debt service (mortgage P&I)</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">The real number. After every bill goes out â including the loan â what's left? Positive cash flow means the tenant is funding your wealth. Negative means you're subsidizing the property from your W-2. Target at minimum $100â200/month per door as a buffer; $200+ is genuinely good on a C-class SFR.</div>
+    <div class="gloss-body">The real number. After every bill goes out — including the loan — what's left? Positive cash flow means the tenant is funding your wealth. Negative means you're subsidizing the property from your W-2. Target at minimum $100–200/month per door as a buffer; $200+ is genuinely good on a C-class SFR.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">Cash-on-Cash Return (CoC)</span>
-      <span class="gloss-formula">Annual cash flow Ã· total cash invested Ã 100</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-formula">Annual cash flow ÷ total cash invested × 100</span>
+      <span class="gloss-arrow">▶</span>
     </div>
     <div class="gloss-body">How hard is YOUR money working? Total cash invested = down payment + closing costs + any immediate repairs. A 10% CoC means you get $1 back for every $10 invested, per year. Most serious investors won't touch a deal under 8%. Below 5% and a diversified index fund beats you with zero effort. This is the most actionable early-stage metric.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">Cap Rate</span>
-      <span class="gloss-formula">NOI Ã· purchase price Ã 100</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-formula">NOI ÷ purchase price × 100</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">What return would you get if you paid all cash? Ignores your loan entirely. Best used for comparing two properties in different markets or with different financing. Coastal markets: 3â5%. Midwest/Southeast C-class: 7â10%. A 7%+ cap rate in a stable market is solid. Never use cap rate in isolation â it ignores your debt service and actual cash invested.</div>
+    <div class="gloss-body">What return would you get if you paid all cash? Ignores your loan entirely. Best used for comparing two properties in different markets or with different financing. Coastal markets: 3–5%. Midwest/Southeast C-class: 7–10%. A 7%+ cap rate in a stable market is solid. Never use cap rate in isolation — it ignores your debt service and actual cash invested.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">Gross Rent Multiplier (GRM)</span>
-      <span class="gloss-formula">Purchase price Ã· gross annual rent</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-formula">Purchase price ÷ gross annual rent</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">A quick-and-dirty screening tool. Lower GRM = better deal. A $200k property renting for $1,500/month = GRM of 11.1. Investors in Midwest/Southeast cash flow markets often target GRMs below 10â12. Coastal markets routinely run 20â30+, which is why they rarely pencil for cash flow. Use GRM for a 10-second gut check before doing full underwriting.</div>
+    <div class="gloss-body">A quick-and-dirty screening tool. Lower GRM = better deal. A $200k property renting for $1,500/month = GRM of 11.1. Investors in Midwest/Southeast cash flow markets often target GRMs below 10–12. Coastal markets routinely run 20–30+, which is why they rarely pencil for cash flow. Use GRM for a 10-second gut check before doing full underwriting.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">CapEx Reserve</span>
       <span class="gloss-formula">Set aside monthly for major replacements</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">Capital expenditures â the big ticket items that don't show up monthly but hit hard when they do. Roof, HVAC, water heater, electrical panel, plumbing, flooring. On a 1940sâ1980s SFR, budget $75â150/month or 1% of purchase price per year. Skipping this reserve is the most common mistake new landlords make â and the one that turns a break-even deal into a loss.</div>
+    <div class="gloss-body">Capital expenditures — the big ticket items that don't show up monthly but hit hard when they do. Roof, HVAC, water heater, electrical panel, plumbing, flooring. On a 1940s–1980s SFR, budget $75–150/month or 1% of purchase price per year. Skipping this reserve is the most common mistake new landlords make — and the one that turns a break-even deal into a loss.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
       <span class="gloss-title">BRRRR Strategy</span>
-      <span class="gloss-formula">Buy â Rehab â Rent â Refinance â Repeat</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-formula">Buy → Rehab → Rent → Refinance → Repeat</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">A capital recycling strategy: buy a distressed property below market, add value through renovation, stabilize with a tenant, then do a cash-out refinance against the new appraised value (ARV) to pull your original investment back out. The goal is to leave little to no capital in the deal while still owning a cash-flowing asset. Works best in markets where you can force equity through rehab â C/B-class Midwest and Southeast markets. Risk: ARV appraisals don't always cooperate, and refi markets change.</div>
+    <div class="gloss-body">A capital recycling strategy: buy a distressed property below market, add value through renovation, stabilize with a tenant, then do a cash-out refinance against the new appraised value (ARV) to pull your original investment back out. The goal is to leave little to no capital in the deal while still owning a cash-flowing asset. Works best in markets where you can force equity through rehab — C/B-class Midwest and Southeast markets. Risk: ARV appraisals don't always cooperate, and refi markets change.</div>
   </div>
   <div class="gloss-item">
     <div class="gloss-head" onclick="tog(this)">
-      <span class="gloss-title">PRE â Principal Residence Exemption (Michigan)</span>
+      <span class="gloss-title">PRE — Principal Residence Exemption (Michigan)</span>
       <span class="gloss-formula">Reduces taxable value by 18% while owner-occupied</span>
-      <span class="gloss-arrow">â¶</span>
+      <span class="gloss-arrow">▶</span>
     </div>
-    <div class="gloss-body">Michigan homeowners who occupy their property as a primary residence receive an 18% reduction in taxable value via the PRE. When you convert to a rental, you must file to rescind the PRE â and your tax bill jumps. For Redford properties, verify your post-rescission tax bill directly with Redford Township before locking in your rental projections.</div>
+    <div class="gloss-body">Michigan homeowners who occupy their property as a primary residence receive an 18% reduction in taxable value via the PRE. When you convert to a rental, you must file to rescind the PRE — and your tax bill jumps. For Redford properties, verify your post-rescission tax bill directly with Redford Township before locking in your rental projections.</div>
   </div>
 </div>
 
 </div><!-- /main -->
 
 <script>
-// âââ SLIDER â NUMBER SYNC ââââââââââââââââââââââââââââââââââââ
+// ─── SLIDER ↔ NUMBER SYNC ────────────────────────────────────
 function syncFromSlider(sid, nid) {
   const s = document.getElementById(sid);
   const n = document.getElementById(nid);
@@ -1135,7 +1620,7 @@ function syncFromNum(nid, sid) {
   s.value = v;
 }
 
-// âââ UTILITIES âââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── UTILITIES ───────────────────────────────────────────────
 function calcMortgage(principal, annualRate, years) {
   if (annualRate === 0) return principal / (years * 12);
   const r = annualRate / 100 / 12;
@@ -1180,7 +1665,7 @@ function setPill(id, val, thresholds, labels) {
   el.innerHTML = `<span class="pill ${cls}">${text}</span>`;
 }
 
-// âââ PROPERTY TYPE TOGGLE ââââââââââââââââââââââââââââââââââââ
+// ─── PROPERTY TYPE TOGGLE ────────────────────────────────────
 let propType = 'sfr';
 function setPropType(t, btn) {
   propType = t;
@@ -1191,7 +1676,7 @@ function setPropType(t, btn) {
   calcAnalyze();
 }
 
-// âââ TAB SWITCHING âââââââââââââââââââââââââââââââââââââââââââ
+// ─── TAB SWITCHING ───────────────────────────────────────────
 function switchTab(id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -1199,7 +1684,7 @@ function switchTab(id) {
   event.target.classList.add('active');
 }
 
-// âââ ANALYZE CALC ââââââââââââââââââââââââââââââââââââââââââââ
+// ─── ANALYZE CALC ────────────────────────────────────────────
 function calcAnalyze() {
   const price  = +document.getElementById('s-price').value;
   const down   = +document.getElementById('s-down').value;
@@ -1270,7 +1755,7 @@ function calcAnalyze() {
   document.getElementById('rh-note').textContent = cfMo >= 200
     ? `Strong deal. ${fmtD(cfMo)}/mo after every bill. CoC: ${fmtP(coc)}, Cap: ${fmtP(cap)}.`
     : cfMo >= 0
-    ? `Thin margins. Only ${fmtD(cfMo)}/mo buffer â one vacancy or repair wipes cash flow.`
+    ? `Thin margins. Only ${fmtD(cfMo)}/mo buffer — one vacancy or repair wipes cash flow.`
     : `Negative cash flow of ${fmtD(Math.abs(cfMo))}/mo. You'd subsidize this deal from your paycheck.`;
 
   // Metrics
@@ -1288,31 +1773,171 @@ function calcAnalyze() {
   setMC('mc-grm', grm <= 12 ? 'pos' : grm <= 16 ? 'neu' : 'neg');
 
   setPill('mp-noi', noi, {good:1,bad:0}, {good:'NOI positive',bad:'NOI negative',mid:'Break-even'});
-  setPill('mp-coc', coc, {good:8,bad:4}, {good:'Strong â¥8%',bad:'Weak <4%',mid:'Acceptable'});
-  setPill('mp-cap', cap, {good:7,bad:5}, {good:'Strong â¥7%',bad:'Low <5%',mid:'Market rate'});
-  setPill('mp-grm', grm, {good:-1,bad:16}, {good:'â',bad:'High GRM',mid:`GRM ${grm.toFixed(1)}x`});
+  setPill('mp-coc', coc, {good:8,bad:4}, {good:'Strong ≥8%',bad:'Weak <4%',mid:'Acceptable'});
+  setPill('mp-cap', cap, {good:7,bad:5}, {good:'Strong ≥7%',bad:'Low <5%',mid:'Market rate'});
+  setPill('mp-grm', grm, {good:-1,bad:16}, {good:'—',bad:'High GRM',mid:`GRM ${grm.toFixed(1)}x`});
 
   // Breakdown
   setBreak('b-gross', fmtD(grossYr), 'pos');
-  setBreak('b-vac', 'â' + fmtD(vacLoss), 'neg');
+  setBreak('b-vac', '−' + fmtD(vacLoss), 'neg');
   setBreak('b-egi', fmtD(egi), noi >= 0 ? 'pos' : 'neg');
-  setBreak('b-tax', 'â' + fmtD(tax*12), 'neg');
-  setBreak('b-ins', 'â' + fmtD(ins*12), 'neg');
-  setBreak('b-pm', 'â' + fmtD(pmAmt), 'neg');
-  setBreak('b-maint', 'â' + fmtD(maint*12), 'neg');
-  setBreak('b-capex', 'â' + fmtD(capex*12), 'neg');
-  setBreak('b-hoa', 'â' + fmtD(hoa*12), hoa > 0 ? 'neg' : 'dim');
-  setBreak('b-util', 'â' + fmtD(util*12), util > 0 ? 'neg' : 'dim');
+  setBreak('b-tax', '−' + fmtD(tax*12), 'neg');
+  setBreak('b-ins', '−' + fmtD(ins*12), 'neg');
+  setBreak('b-pm', '−' + fmtD(pmAmt), 'neg');
+  setBreak('b-maint', '−' + fmtD(maint*12), 'neg');
+  setBreak('b-capex', '−' + fmtD(capex*12), 'neg');
+  setBreak('b-hoa', '−' + fmtD(hoa*12), hoa > 0 ? 'neg' : 'dim');
+  setBreak('b-util', '−' + fmtD(util*12), util > 0 ? 'neg' : 'dim');
   const bNoi = document.getElementById('b-noi');
   bNoi.textContent = fmtD(noi);
   bNoi.className = 'bv ' + (noi >= 0 ? 'pos' : 'neg');
-  setBreak('b-mort', 'â' + fmtD(mortYr), 'neg');
+  setBreak('b-mort', '−' + fmtD(mortYr), 'neg');
   const bCf = document.getElementById('b-cfyr');
   bCf.textContent = fmtD(cfYr);
   bCf.className = 'bv ' + (cfYr >= 0 ? 'pos' : 'neg');
+
+  // ── Benchmark scorecard ──
+  renderBenchmarkPanel({ price, grossMo, down, cfMo, coc, cap, grm, noi, mortMo });
 }
 
-// âââ BRRRR CALC ââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── BENCHMARK SCORECARD RENDERER ────────────────────────────
+function renderBenchmarkPanel({ price, grossMo, down, cfMo, coc, cap, grm, noi, mortMo }) {
+  // Detect tier from purchase price
+  let tier, tierLabel, capMin, cocMin, cfMin, grmMax, opctMin, noiMin;
+  if (price < 150000) {
+    tier = '$80K–$150K'; tierLabel = 'Midwest C-class / rural';
+    capMin=6.5; cocMin=8; cfMin=150; grmMax=10; opctMin=0.9; noiMin=450;
+  } else if (price < 250000) {
+    tier = '$150K–$250K'; tierLabel = 'Midwest / SE B-class — your target zone';
+    capMin=6.0; cocMin=8; cfMin=200; grmMax=12; opctMin=0.85; noiMin=550;
+  } else if (price < 400000) {
+    tier = '$250K–$400K'; tierLabel = 'SE growth market / Atlanta suburbs';
+    capMin=5.0; cocMin=5; cfMin=200; grmMax=14; opctMin=0.7; noiMin=700;
+  } else {
+    tier = '$400K+'; tierLabel = 'Primary metro / coastal — outside your strategy';
+    capMin=3.5; cocMin=4; cfMin=0; grmMax=20; opctMin=0.5; noiMin=900;
+  }
+
+  const noiMo   = noi / 12;
+  const onePct  = price > 0 ? (grossMo / price) * 100 : 0;
+  const dscr    = mortMo > 0 ? noiMo / mortMo : 0;
+
+  // Build check rows — { label, actual, target, pass, watch }
+  const checks = [
+    {
+      label:  'Cap rate',
+      actual: fmtP(cap),
+      target: `≥ ${capMin}%`,
+      pass:   cap >= capMin + 1,
+      watch:  cap >= capMin,
+    },
+    {
+      label:  'Cash-on-cash',
+      actual: fmtP(coc),
+      target: `≥ ${cocMin}%`,
+      pass:   coc >= cocMin,
+      watch:  coc >= cocMin - 3,
+    },
+    {
+      label:  'Monthly cash flow',
+      actual: fmtD(cfMo) + '/mo',
+      target: `≥ $${cfMin}/mo`,
+      pass:   cfMo >= cfMin,
+      watch:  cfMo >= 0,
+    },
+    {
+      label:  'NOI / mo',
+      actual: fmtD(noiMo) + '/mo',
+      target: `≥ $${noiMin}/mo`,
+      pass:   noiMo >= noiMin,
+      watch:  noiMo >= noiMin * 0.75,
+    },
+    {
+      label:  'GRM',
+      actual: grm.toFixed(1) + 'x',
+      target: `< ${grmMax}x`,
+      pass:   grm < grmMax,
+      watch:  grm < grmMax * 1.2,
+    },
+    {
+      label:  '1% rule',
+      actual: fmtP(onePct),
+      target: `≥ ${opctMin}%`,
+      pass:   onePct >= 1.0,
+      watch:  onePct >= opctMin,
+    },
+    {
+      label:  'DSCR',
+      actual: dscr.toFixed(2),
+      target: '≥ 1.25',
+      pass:   dscr >= 1.25,
+      watch:  dscr >= 1.0,
+    },
+  ];
+
+  const passCount  = checks.filter(c => c.pass).length;
+  const watchCount = checks.filter(c => !c.pass && c.watch).length;
+  const total      = checks.length;
+
+  // Overall rating
+  let rating, ratingCls;
+  if (passCount >= 6)                        { rating = `Strong deal · ${passCount}/${total} pass`;   ratingCls = 'pass'; }
+  else if (passCount >= 4)                   { rating = `Solid · ${passCount}/${total} pass`;          ratingCls = 'pass'; }
+  else if (passCount >= 2 || watchCount >= 3){ rating = `Marginal · ${passCount}/${total} pass`;       ratingCls = 'warn'; }
+  else                                       { rating = `Fails benchmarks · ${passCount}/${total}`;    ratingCls = 'fail'; }
+
+  // Verdict text
+  let verdictText;
+  if (passCount >= 5) {
+    verdictText = `<strong>This deal clears the key benchmarks for the ${tier} tier.</strong> Run a full underwrite with verified local rent comps and real expense quotes before proceeding.`;
+  } else if (passCount >= 3 || watchCount >= 3) {
+    const weakest = checks.filter(c => !c.pass && !c.watch).map(c => c.label);
+    verdictText = `<strong>Marginal deal — ${passCount}/${total} benchmarks pass.</strong> Weakest metrics: ${weakest.slice(0,3).join(', ') || 'none critical'}. Ask: can you negotiate the price down, find higher rent comps, or cut expenses to fix it?`;
+  } else {
+    const failing = checks.filter(c => !c.pass).map(c => c.label);
+    verdictText = `<strong>Deal fails ${total - passCount} of ${total} benchmarks for the ${tier} tier.</strong> Failing: ${failing.slice(0,4).join(', ')}. You need a lower price, higher rents, or a different market for this to pencil.`;
+  }
+
+  // Render tier label
+  document.getElementById('bm-tier-label').innerHTML =
+    `Auto-detected tier: <span>${tier} — ${tierLabel}</span>`;
+
+  // Render badge
+  const badge = document.getElementById('bm-badge');
+  badge.textContent  = rating.split('·')[0].trim();
+  badge.className    = 'bm-panel-badge ' + ratingCls;
+
+  // Render check rows
+  document.getElementById('bm-checks').innerHTML = checks.map(c => {
+    const cls  = c.pass ? 'p' : c.watch ? 'w' : 'f';
+    const dot  = c.pass ? 'var(--green)' : c.watch ? 'var(--amber)' : 'var(--red)';
+    const lbl  = c.pass ? 'Pass' : c.watch ? 'Watch' : 'Fail';
+    return `<div class="bm-check-row">
+      <div class="bm-check-left">
+        <div class="bm-dot" style="background:${dot};"></div>
+        ${c.label}
+      </div>
+      <div class="bm-check-right">
+        <span class="bm-check-actual">${c.actual}</span>
+        <span class="bm-check-target">target ${c.target}</span>
+        <span class="bm-check-status ${cls}">${lbl}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Score bar — one segment per check, colored by status
+  document.getElementById('bm-score-bar').innerHTML = checks.map(c => {
+    const bg = c.pass ? 'var(--green)' : c.watch ? 'var(--amber)' : 'rgba(184,50,50,0.3)';
+    return `<div class="bm-score-seg" style="background:${bg};"></div>`;
+  }).join('');
+
+  // Verdict
+  const vEl = document.getElementById('bm-panel-verdict');
+  vEl.innerHTML   = verdictText;
+  vEl.className   = 'bm-panel-verdict ' + ratingCls;
+}
+
+// ─── BRRRR CALC ──────────────────────────────────────────────
 function calcBRRRR() {
   const price  = +document.getElementById('br-s-price').value;
   const down   = +document.getElementById('br-s-down').value;
@@ -1371,10 +1996,10 @@ function calcBRRRR() {
   hl.className = 'result-highlight' + (pctRecovered >= 100 ? '' : pctRecovered >= 75 ? ' warn' : ' bad');
   document.getElementById('br-recovered').textContent = fmtP(pctRecovered);
   document.getElementById('br-note').textContent = pctRecovered >= 100
-    ? `Full capital recovery. You pulled out ${fmtD(proceeds)} â all-in cost was ${fmtD(allIn)}. Classic BRRRR.`
+    ? `Full capital recovery. You pulled out ${fmtD(proceeds)} — all-in cost was ${fmtD(allIn)}. Classic BRRRR.`
     : pctRecovered >= 75
     ? `Partial recovery. ${fmtD(leftIn)} remains in the deal. Still strong if cash flow justifies it.`
-    : `Only ${fmtP(pctRecovered)} recovered. ${fmtD(leftIn)} left in the deal â closer to a traditional buy-and-hold.`;
+    : `Only ${fmtP(pctRecovered)} recovered. ${fmtD(leftIn)} left in the deal — closer to a traditional buy-and-hold.`;
 
   // Metric cards
   document.getElementById('br-mv1').textContent = fmtD(allIn);
@@ -1389,14 +2014,14 @@ function calcBRRRR() {
 
   // Breakdown
   setBreak('brb-price',  fmtD(price));
-  setBreak('brb-rehab',  'â' + fmtD(rehab), 'neg');
-  setBreak('brb-hold',   'â' + fmtD(holdTotal), 'neg');
-  setBreak('brb-close1', 'â' + fmtD(close1), 'neg');
+  setBreak('brb-rehab',  '−' + fmtD(rehab), 'neg');
+  setBreak('brb-hold',   '−' + fmtD(holdTotal), 'neg');
+  setBreak('brb-close1', '−' + fmtD(close1), 'neg');
   setBreak('brb-allin',  fmtD(allIn), 'neg');
   setBreak('brb-arv',    fmtD(arv), 'pos');
   document.getElementById('brb-ltv-pct').textContent = ltv;
   setBreak('brb-loan',   fmtD(refiLoan), 'pos');
-  setBreak('brb-close2', 'â' + fmtD(close2), 'neg');
+  setBreak('brb-close2', '−' + fmtD(close2), 'neg');
   setBreak('brb-proceeds', fmtD(proceeds), 'pos');
   const leftEl = document.getElementById('brb-left');
   leftEl.textContent = fmtD(leftIn);
@@ -1407,7 +2032,7 @@ function calcBRRRR() {
   cfEl.className = 'bv ' + (cfMo >= 0 ? 'pos' : 'neg');
 }
 
-// âââ COMPARE CALC ââââââââââââââââââââââââââââââââââââââââââââ
+// ─── COMPARE CALC ────────────────────────────────────────────
 function calcCompare() {
   const deals = [1,2,3].map(i => {
     const price = +document.getElementById(`c${i}-price`).value || 0;
@@ -1468,23 +2093,136 @@ function calcCompare() {
   const winner = cocs[0];
   const names = [1,2,3].map(i => document.getElementById('cn-' + i).value || ('Deal ' + String.fromCharCode(64+i)));
   document.getElementById('compare-winner-text').textContent =
-    `${names[winner.i]} â ${fmtP(winner.coc)} cash-on-cash return`;
+    `${names[winner.i]} — ${fmtP(winner.coc)} cash-on-cash return`;
 }
 
-// âââ GLOSSARY ââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── BENCHMARK CALC ──────────────────────────────────────────
+function calcBenchmark() {
+  const price  = +document.getElementById('bm-s-price').value;
+  const rent   = +document.getElementById('bm-s-rent').value;
+  const down   = +document.getElementById('bm-s-down').value;
+  const rate   = +document.getElementById('bm-s-rate').value;
+  const vac    = +document.getElementById('bm-s-vac').value;
+  const opex   = +document.getElementById('bm-s-opex').value;
+
+  // Sync sliders → readouts (numbers sync via syncFromNum already)
+  document.getElementById('bm-r-price').textContent = fmtD(price);
+  document.getElementById('bm-r-rent').textContent  = fmtD(rent);
+  document.getElementById('bm-r-down').textContent  = fmtD(down);
+  document.getElementById('bm-r-rate').textContent  = rate + '%';
+  document.getElementById('bm-r-vac').textContent   = vac + '%';
+  document.getElementById('bm-r-opex').textContent  = fmtD(opex);
+
+  // Sync number inputs from sliders
+  document.getElementById('bm-n-price').value = price;
+  document.getElementById('bm-n-rent').value  = rent;
+  document.getElementById('bm-n-down').value  = down;
+  document.getElementById('bm-n-rate').value  = rate;
+  document.getElementById('bm-n-vac').value   = vac;
+  document.getElementById('bm-n-opex').value  = opex;
+
+  const egi    = rent * (1 - vac / 100);
+  const noiMo  = egi - opex;
+  const noiYr  = noiMo * 12;
+  const loan   = price - down;
+  const mortMo = calcMortgage(loan, rate, 30);
+  const cfMo   = noiMo - mortMo;
+  const cfYr   = cfMo * 12;
+  const coc    = down > 0 ? (cfYr / down) * 100 : 0;
+  const cap    = price > 0 ? (noiYr / price) * 100 : 0;
+  const grm    = rent > 0 ? price / (rent * 12) : 0;
+  const dscr   = mortMo > 0 ? noiMo / mortMo : 0;
+  const onePct = price > 0 ? (rent / price) * 100 : 0;
+  const expRat = rent > 0 ? (opex / rent) * 100 : 0;
+
+  // Score cards
+  function scoreClass(v, good, ok) {
+    return v >= good ? 'pos' : v >= ok ? 'neu' : 'neg';
+  }
+  function gradeLabel(v, good, ok) {
+    return v >= good ? 'Pass' : v >= ok ? 'Watch' : 'Fail';
+  }
+
+  const scores = [
+    { label: 'NOI / mo',        val: fmtD(noiMo),           cls: scoreClass(noiMo, 550, 300),   sub: noiMo >= 550 ? 'Meets target' : 'Below target' },
+    { label: 'Monthly CF',      val: fmtD(cfMo),            cls: scoreClass(cfMo, 200, 0),      sub: cfMo >= 200 ? 'Strong' : cfMo >= 0 ? 'Thin' : 'Negative' },
+    { label: 'Cap Rate',        val: fmtP(cap),             cls: scoreClass(cap, 7, 5),         sub: gradeLabel(cap, 7, 5) },
+    { label: 'Cash-on-Cash',    val: fmtP(coc),             cls: scoreClass(coc, 8, 5),         sub: gradeLabel(coc, 8, 5) },
+    { label: 'GRM',             val: grm.toFixed(1) + 'x',  cls: grm < 10 ? 'pos' : grm < 13 ? 'neu' : 'neg', sub: grm < 10 ? 'Pass' : grm < 13 ? 'Watch' : 'Fail' },
+    { label: '1% Rule',         val: fmtP(onePct),          cls: scoreClass(onePct, 1, 0.8),    sub: gradeLabel(onePct, 1, 0.8) },
+    { label: 'DSCR',            val: dscr.toFixed(2),       cls: scoreClass(dscr, 1.25, 1.0),   sub: gradeLabel(dscr, 1.25, 1.0) },
+    { label: 'Expense Ratio',   val: fmtP(expRat),          cls: expRat < 45 ? 'pos' : expRat < 55 ? 'neu' : 'neg', sub: expRat < 45 ? 'Pass' : expRat < 55 ? 'Watch' : 'Fail' },
+  ];
+
+  document.getElementById('bm-scores').innerHTML = scores.map(s => `
+    <div class="bm-score-card">
+      <div class="bm-score-label">${s.label}</div>
+      <div class="bm-score-val ${s.cls}">${s.val}</div>
+      <div class="bm-score-sub">${s.sub}</div>
+    </div>
+  `).join('');
+
+  // Checklist
+  const checks = [
+    { label: 'Cap rate ≥ 7%',           pass: cap >= 7,    watch: cap >= 5 },
+    { label: 'Cash-on-cash ≥ 8%',       pass: coc >= 8,    watch: coc >= 5 },
+    { label: 'Monthly CF ≥ $200',        pass: cfMo >= 200, watch: cfMo >= 0 },
+    { label: 'GRM < 10x',               pass: grm < 10,    watch: grm < 13 },
+    { label: '1% rule passes',           pass: onePct >= 1, watch: onePct >= 0.8 },
+    { label: 'DSCR ≥ 1.25',             pass: dscr >= 1.25,watch: dscr >= 1.0 },
+    { label: 'Expense ratio < 45%',      pass: expRat < 45, watch: expRat < 55 },
+  ];
+
+  const passCount  = checks.filter(c => c.pass).length;
+  const watchCount = checks.filter(c => !c.pass && c.watch).length;
+
+  document.getElementById('bm-checklist-wrap').innerHTML = `
+    <div class="breakdown" style="border-radius:var(--radius)">
+      ${checks.map(c => {
+        const icon  = c.pass ? 'p' : c.watch ? 'w' : 'f';
+        const sym   = c.pass ? '✓' : c.watch ? '~' : '✗';
+        const color = c.pass ? 'var(--green)' : c.watch ? 'var(--amber)' : 'var(--red)';
+        return `<div class="brow" style="padding:9px 16px;">
+          <span class="bl" style="display:flex;align-items:center;gap:8px;">
+            <span class="bm-check-icon ${icon}">${sym}</span>${c.label}
+          </span>
+          <span style="font-size:11px;font-weight:600;color:${color};">${c.pass ? 'Pass' : c.watch ? 'Watch' : 'Fail'}</span>
+        </div>`;
+      }).join('')}
+    </div>
+  `;
+
+  // Overall verdict
+  let vClass, vText;
+  if (passCount >= 5) {
+    vClass = 'pass';
+    vText  = `<strong>${passCount}/7 metrics pass.</strong> This deal clears the key thresholds. Run a full underwrite with verified local comps before proceeding — the screener uses your inputs, not market reality.`;
+  } else if (passCount >= 3 || watchCount >= 3) {
+    vClass = 'warn';
+    vText  = `<strong>${passCount}/7 pass, ${watchCount} in watch range.</strong> Marginal deal. Identify the weakest metric and ask: can I negotiate price down, find a higher-rent comp, or reduce expenses to fix it?`;
+  } else {
+    vClass = 'fail';
+    vText  = `<strong>Only ${passCount}/7 metrics pass.</strong> At this price and rent combination the deal doesn't work. You need a lower price, higher rents, or a fundamentally different market.`;
+  }
+
+  document.getElementById('bm-verdict-wrap').innerHTML = `<div class="bm-verdict ${vClass}">${vText}</div>`;
+}
+
+// ─── GLOSSARY ────────────────────────────────────────────────
 function tog(header) {
   header.parentElement.classList.toggle('open');
 }
 
-// âââ INIT ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── INIT ────────────────────────────────────────────────────
 calcAnalyze();
 calcBRRRR();
 calcCompare();
+calcBenchmark();
 </script>
 
 <div class="main" style="padding-top:0">
   <div class="footer">
-    Deal Analyzer Â· All calculations run locally Â· No data sent anywhere
+    Deal Analyzer · All calculations run locally · No data sent anywhere
   </div>
 </div>
 
