@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: borderbox; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --primary: #7B3FE4;
@@ -96,27 +96,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--primary);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: var(--primary);
-    border-radius: 2px;
   }
 
   .hero-name {
@@ -368,7 +347,7 @@
     font-weight: 400;
     padding: 8px 18px;
     border-radius: 99px;
-    border: 0.5px solid var(--border
+    border: 0.5px solid var(--border);
     color: var(--text-secondary);
     background: var(--bg-surface);
     letter-spacing: -0.1px;
@@ -570,7 +549,6 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">Based in Atlanta, GA</div>
     <h1 class="hero-name">Nafees<br><em>Mahbub.</em></h1>
     <p class="hero-tagline">Proactive by default. <strong>Simple by choice.</strong></p>
     <p class="hero-bio">I'm a business analyst working at the intersection of operations, data, and long-term thinking. I move fast, act with intention, and believe the best way to live well is to keep things simple. Outside of work I'm building toward financial independence through real estate and investing — and sharing what I learn along the way.</p>
@@ -624,9 +602,6 @@
       </div>
       <h3 class="pillar-title">Investing</h3>
       <p class="pillar-desc">Long-term wealth through real estate, index funds, and cash-flow thinking. Buy and hold, always.</p>
-      <a href="deal_analyzer_1.html" class="pillar-link">Deal Analyzer
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-      </a>
     </div>
     <div class="pillar pillar-3">
       <p class="pillar-number">03</p>
